@@ -4,6 +4,11 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import Alert from "./components/Alert";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
 
@@ -37,15 +42,25 @@ function App() {
 
   return (
     <>
-      {/* If you are not give any props and you set defualt props in Navbar.js file it will take default value */}
-      <Navbar title="TextUtils" about="About" mode={mode} toggleMode={toggleMode} />
+      <Router>
+        {/* If you are not give any props and you set defualt props in Navbar.js file it will take default value */}
+        <Navbar title="TextUtils" about="About" mode={mode} toggleMode={toggleMode} />
 
-      {/* For default props */}
-      {/* <Navbar /> */}
+        {/* For default props */}
+        {/* <Navbar /> */}
 
-      <Alert alert={alert} />
+        <Alert alert={alert} />
 
-      <TextForm showAlert={showAlert} heading="Address" mode={mode} />
+        <div className="container my-3">
+          <Routes>
+            {/* Using exact it will check exact path otherwise it will go on first path */}
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Address" mode={mode} />}></Route>
+
+            <Route exact path="/about" element={<About />}></Route>
+
+          </Routes>
+        </div>
+      </Router>
       {/* <About /> */}
     </>
   );
