@@ -44,7 +44,9 @@ export default function TextForm(props) {
                 <h1>Your text summary</h1>
 
                 {/* Count the word how many words as well as characters are there in the text area */}
-                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} characters</p>
+                {/* Using regular expression counting the word for every line */}
+                {/* \s is use for whitespace and / is use for new line */}
+                <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} characters</p>
                 <h2>Preview your text</h2>
                 <p>{text.length > 0 ? text : "Nothing to preview..!"}</p>
             </div>
