@@ -1,35 +1,44 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
 
-    const [btnText, setbtnText] = useState("Enable dark mode")
 
-    const toggleStyle = () => {
-        if (myStyle.color === 'black') {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setbtnText("Enable light mode")
-        }
-        else {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setbtnText("Enable dark mode")
-        }
+    // const [btnText, setbtnText] = useState("Enable dark mode")
+
+
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
+
+    // const toggleStyle = () => {
+    //     if (myStyle.color === 'black') {
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         setbtnText("Enable light mode")
+    //     }
+    //     else {
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setbtnText("Enable dark mode")
+    //     }
+    // }
+
+    // Apply the background in about section when you enable the dark mode
+    let myStyle = {
+        color: props.mode === "dark" ? "white" : "rgb(36 74 104)",
+        backgroundColor: props.mode === "dark" ? "rgb(36 74 104)" : "white"
     }
 
     return (
         <>
             {/*Tut - 10 */}
-            <div className="container" style={myStyle}>
+            <div className="container" style={{ color: props.mode === "dark" ? "white" : "rgb(36 74 104)" }}>
                 <div className="accordion" id="accordionExample">
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="headingOne">
@@ -68,9 +77,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="container my-4">
+                {/* <div className="container my-4">
                     <button type="button" onClick={toggleStyle} className='btn btn-primary'>{btnText}</button>
-                </div>
+                </div> */}
             </div>
 
         </>

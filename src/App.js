@@ -54,9 +54,9 @@ function App() {
         <div className="container my-3">
           <Routes>
             {/* Using exact it will check exact path otherwise it will go on first path */}
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Address" mode={mode} />}></Route>
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word counter, character counter" mode={mode} />}></Route>
 
-            <Route exact path="/about" element={<About />}></Route>
+            <Route exact path="/about" element={<About mode={mode} />}></Route>
 
           </Routes>
         </div>
