@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* For default props */}
       {/* <Navbar /> */}
 
-      <TextForm heading="Try TextUtils - word counter, character counter, remove extra spaces" />
+      {/* <TextForm heading="Try TextUtils - word counter, character counter, remove extra spaces" /> */}
+      <About />
     </>
   );
 }
