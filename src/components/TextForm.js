@@ -38,6 +38,16 @@ export default function TextForm(props) {
                 <button className="btn btn-danger m-2" onClick={handleUpClick}>Upper!!</button>
                 <button className="btn btn-danger m-2" onClick={handleLoClick}>Lower!!</button>
             </div>
+
+
+            <div className="container my-3">
+                <h1>Your text summary</h1>
+
+                {/* Count the word how many words as well as characters are there in the text area */}
+                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <h2>Preview your text</h2>
+                <p>{text}</p>
+            </div>
         </>
     )
 }
